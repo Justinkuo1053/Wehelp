@@ -1,0 +1,540 @@
+/* 通用样式 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.navbar-title {
+  float: left;
+  line-height: 78px;
+  margin-left: 1%;
+  /* 根據需要添加更多樣式 */
+}
+
+.navbar-menu li {
+  display: inline-block;
+  margin-left: 20px;
+  line-height: 60px;
+}
+
+.welcome-section {
+  background-color: #add8e6; /* 淡藍色 */
+  text-align: center;
+  padding: 0 0; /* 這將提供上下各 125px 的填充，從而達到 250px 的總高度 */
+}
+
+/* 歡迎部分樣式 */
+.welcome-section p {
+  font-size: 40px; /* 基本大小的兩倍 */
+  color: #000; /* 文字顏色 */
+  margin: 0; /* 移除默認邊距 */
+  /* 這將確保文字在背景框框內垂直居中 */
+  line-height: 250px; /* 這應與 .welcome-background 的總高度相同 */
+}
+
+.navbar-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.navbar-menu li {
+  padding: 10px 15px; /* 适当的间距 */
+}
+
+/* 
+.big-box .title,
+.small-box span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 0;
+} */
+
+/* 屏幕宽度在 1200px 到 1920px 之间的设备样式 */
+@media screen and (min-width: 1200px) and (max-width: 3000px) {
+  .small-boxes-container {
+    display: grid;
+    grid-template-columns: repeat(3, calc((100% - 60px) / 3));
+    /* 定義三列 */
+    grid-gap: 10px; /* 定義格子間的間距 */
+    align-items: start; /* 對齊每一項的開始邊 */
+    margin: 100px auto 10px; /* 上邊距 100px, 左右自動, 下邊距 10px */
+    width: 1200px; /* 容器寬度 */
+    /* height: 50px; 這個高度設定可能需要根據圖片大小進行調整 */
+    column-gap: 20px;
+  }
+  .small-boxes-container > div {
+    /* 針對每個格子內的直接子 div 元素設定樣式 */
+    background: #4fe1bd; /* 可以設定一個背景顏色，僅供示範 */
+    /* 為了更好的視覺效果添加一些內距 */
+    display: flex; /* 使得圖片和文字垂直居中 */
+    flex-direction: row;
+    width: 380px;
+    align-items: center; /* 子項目垂直居中 */
+    justify-content: flex-start; /* 子項目靠左對齊 */
+  }
+  .small-boxes-container img {
+    width: 80px; /* 圖片寬度設為 50px */
+    height: 50px; /* 圖片高度設為 80px */
+    margin-right: 10px; /* 圖片和文字之間的間隔 */
+    align-items: left;
+  }
+  .small-boxes-container span {
+    text-align: center; /* 文字居中顯示 */
+    display: block; /* 讓span表現得像block元素，以填滿整個格子的寬度 */
+  }
+  .big-boxes-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 200px;
+    width: 1200px; /* 或您希望的任何寬度 */
+  }
+  /* 添加星星圖標的樣式 */
+  .big-box .star {
+    position: absolute;
+    top: 5px; /* 調整星星圖標距離頂部的位置 */
+    right: 5px; /* 調整星星圖標距離右側的位置 */
+    width: 20px; /* 調整星星圖標的寬度 */
+    height: 20px; /* 調整星星圖標的高度 */
+    background-image: url("public/R.png");
+    /* 指定星星圖標的路徑 */
+    background-size: contain; /* 讓星星圖標按比例顯示 */
+    z-index: 3; /* 設置較大的層級值 */
+  }
+
+  .big-box1 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    z-index: 1;
+  }
+
+  .big-box2 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box3 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box4 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box5 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+  .big-box6 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box7 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box8 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box9 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box10 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box span {
+    position: absolute; /* 将标题绝对定位 */
+    bottom: 0; /* 放置在图片底部 */
+    left: 0; /* 左侧对齐 */
+    width: 100%; /* 宽度占满父容器 */
+    /* 设置内边距，增加标题的可读性 */
+    background-color: rgba(0, 0, 255, 0.5); /* 设置半透明淡蓝色背景 */
+    color: white; /* 设置文字颜色为白色 */
+    text-align: center;
+  }
+}
+
+/* 屏幕宽度在 600px 到 1200px 之间的设备样式 */
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  @media screen and (min-width: 601px) and (max-width: 1200px) {
+    .main {
+      width: 90%;
+      display: flex;
+    }
+
+    .BS {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .small-boxes-container {
+      position: relative;
+      max-width: 90%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-gap: 10px; /* 定義格子間的間距 */
+      align-items: start; /* 對齊每一項的開始邊 */
+      margin: 100px auto 10px; /* 上邊距 100px, 左右自動, 下邊距 10px */
+      min-height: 200px;
+      overflow: hidden;
+    }
+
+    .Promotion3 {
+      grid-column: 1 / -1;
+      /* This will make the Title 3 span all the columns available */
+      margin: 0 -10px; /* 使得内容向外扩展10px，来"覆盖"grid-gap的空间 */
+    }
+
+    .Promotion {
+      position: relative;
+    }
+
+    .small-boxes-container img {
+      width: 30%; /* 或者您想要的宽度百分比 */
+      height: 100%;
+
+      z-index: 1;
+    }
+
+    .small-boxes-container .overlayText {
+      position: absolute;
+      width: 70%; /* 如果图片是30%，那么文本应该覆盖剩余的70% */
+      height: 100%;
+      top: 0;
+      left: 30%; /* 这应该与图片的宽度对齐 */
+      z-index: 2;
+      text-align: left;
+      padding-left: 10px; /* 或者您想要的數值 */
+
+      background-color: #4fe1bd;
+    }
+
+    .big-boxes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-left: 5%;
+      margin-right: 5%; /* 当空间不足以保持之间的距离时，盒子会均匀分布 */
+    }
+
+    .small-box {
+      /* 盒子宽度是容器宽度的90% */
+      margin: 0 auto; /* 居中显示 */
+      height: 100px; /* 或根据内容调整 */
+    }
+
+    .big-box {
+      width: 90%; /* 盒子宽度是容器宽度的90% */
+      margin: 0 auto; /* 居中显示 */
+      height: 100px; /* 或根据内容调整 */
+    }
+
+    .big-box-large {
+      width: 90%; /* 第一个大盒子也是宽度的90% */
+    }
+  }
+
+  .big-boxes-container {
+    position: relative;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 4px; /* 定義格子間的間距 */
+    align-items: start; /* 對齊每一項的開始邊 */
+    margin: 100px auto 10px; /* 上邊距 100px, 左右自動, 下邊距 10px */
+    min-height: 200px;
+    overflow: hidden;
+  }
+
+  .overlayStar {
+    display: flex-;
+    position: relative; /* 將星星設置為絕對定位 */
+    top: 0; /* 距離父元素頂部 0 像素 */
+    left: 0; /* 距離父元素左側 0 像素 */
+    z-index: 2;
+    color: red;
+    float: left;
+  }
+  /* 添加星星圖標的樣式 */
+  .big-box .star {
+    position: absolute;
+    top: 5px; /* 調整星星圖標距離頂部的位置 */
+    right: 5px; /* 調整星星圖標距離右側的位置 */
+    width: 20px; /* 調整星星圖標的寬度 */
+    height: 20px; /* 調整星星圖標的高度 */
+    background-image: url("public/R.png");
+    /* 指定星星圖標的路徑 */
+    background-size: contain; /* 讓星星圖標按比例顯示 */
+    z-index: 3; /* 設置較大的層級值 */
+  }
+
+  .big-box1 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    z-index: 1;
+  }
+
+  .big-box2 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box3 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box4 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box5 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+  .big-box6 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box7 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box8 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 2;
+  }
+
+  .big-box9 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 3;
+    grid-column: 1 / 3;
+  }
+
+  .big-box10 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    grid-row: 3;
+    grid-column: 3 / 5;
+  }
+}
+
+.big-box span {
+  position: absolute; /* 将标题绝对定位 */
+  bottom: 0; /* 放置在图片底部 */
+  left: 0; /* 左侧对齐 */
+  width: 100%; /* 宽度占满父容器 */
+  /* 设置内边距，增加标题的可读性 */
+  background-color: rgba(0, 0, 255, 0.5); /* 设置半透明淡蓝色背景 */
+  color: white; /* 设置文字颜色为白色 */
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  @media screen and (min-width: 10px) and (max-width: 600px) {
+    .main {
+      width: 90%;
+      display: flex;
+    }
+
+    .BS {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .small-boxes-container {
+      position: relative;
+      max-width: 90%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      column-gap: 10px;
+      grid-gap: 1px; /* 定義格子間的間距 */
+      align-items: start; /* 對齊每一項的開始邊 */
+      margin: 100px auto 10px; /* 上邊距 100px, 左右自動, 下邊距 10px */
+      min-height: 200px;
+      overflow: hidden;
+    }
+
+    .small-boxes-container img {
+      width: 30%; /* 或者您想要的宽度百分比 */
+      height: 100%;
+
+      z-index: 1;
+    }
+
+    .small-boxes-container .overlayText {
+      position: absolute;
+      width: 70%; /* 如果图片是30%，那么文本应该覆盖剩余的70% */
+      height: 100%;
+      top: 0;
+      left: 30%; /* 这应该与图片的宽度对齐 */
+      z-index: 2;
+      text-align: left;
+      padding-left: 10px; /* 或者您想要的數值 */
+
+      background-color: #4fe1bd;
+    }
+
+    .big-boxes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-left: 5%;
+      margin-right: 5%; /* 当空间不足以保持之间的距离时，盒子会均匀分布 */
+    }
+
+    .small-box {
+      /* 盒子宽度是容器宽度的90% */
+      margin: 0 auto; /* 居中显示 */
+      height: 100px; /* 或根据内容调整 */
+    }
+
+    .big-box {
+      width: 90%; /* 盒子宽度是容器宽度的90% */
+      margin: 0 auto; /* 居中显示 */
+      height: 100px; /* 或根据内容调整 */
+    }
+
+    .big-box-large {
+      width: 90%; /* 第一个大盒子也是宽度的90% */
+    }
+  }
+
+  .big-boxes-container {
+    position: relative;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 10);
+    grid-gap: 4px; /* 定義格子間的間距 */
+    align-items: start; /* 對齊每一項的開始邊 */
+    margin: 100px auto 10px; /* 上邊距 100px, 左右自動, 下邊距 10px */
+    min-height: 200px;
+    overflow: hidden;
+  }
+
+  .overlayStar {
+    display: flex;
+    position: relative; /* 將星星設置為絕對定位 */
+    top: 0; /* 距離父元素頂部 0 像素 */
+    left: 0; /* 距離父元素左側 0 像素 */
+    z-index: 2;
+    color: red;
+    float: left;
+  }
+  /* 添加星星圖標的樣式 */
+  .big-box .star {
+    position: absolute;
+    top: 5px; /* 調整星星圖標距離頂部的位置 */
+    right: 5px; /* 調整星星圖標距離右側的位置 */
+    width: 20px; /* 調整星星圖標的寬度 */
+    height: 20px; /* 調整星星圖標的高度 */
+    background-image: url("public/R.png");
+    /* 指定星星圖標的路徑 */
+    background-size: contain; /* 讓星星圖標按比例顯示 */
+    z-index: 3; /* 設置較大的層級值 */
+  }
+
+  .big-box1 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+    z-index: 1;
+  }
+
+  .big-box2 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box3 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box4 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box5 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+  .big-box6 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box7 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box8 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box9 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box10 {
+    position: relative;
+    background-image: url("public/2833951.jpg");
+  }
+
+  .big-box span {
+    position: absolute; /* 将标题绝对定位 */
+    bottom: 0; /* 放置在图片底部 */
+    left: 0; /* 左侧对齐 */
+    width: 100%; /* 宽度占满父容器 */
+    /* 设置内边距，增加标题的可读性 */
+    background-color: rgba(0, 0, 255, 0.5); /* 设置半透明淡蓝色背景 */
+    color: white; /* 设置文字颜色为白色 */
+    text-align: center;
+  }
+}
+
+.popup-menu {
+  background-image: url("public\burger.png");
+  z-index: 3;
+}
