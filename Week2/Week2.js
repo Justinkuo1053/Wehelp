@@ -80,62 +80,59 @@ findAndPrint(messages, "Xindian City Hall"); // print Vivian
 
 // Q2
 console.log("----------Q2----------");
-// 增加一個結構來追踪顧問的預約狀態
-let consultantSchedules = {
-  John: [],
-  Bob: [],
-  Jenny: [],
-};
-
-function book(consultants, hour, duration, criteria) {
-  // 過濾出在指定時間可預約的顧問
-  let availableConsultants = consultants.filter((consultant) => {
-    // 檢查顧問是否在該時間段內已經有預約
-    for (let i = 0; i < consultantSchedules[consultant.name].length; i++) {
-      let booking = consultantSchedules[consultant.name][i];
-      if (hour < booking.end && hour + duration > booking.start) {
-        return false;
-      }
-    }
-    return true;
-  });
-
-  if (availableConsultants.length === 0) {
-    console.log("No Service");
-    return;
-  }
-
-  // 根據優先考量進行排序
-  if (criteria === "price") {
-    availableConsultants.sort((a, b) => a.price - b.price);
-  } else if (criteria === "rate") {
-    availableConsultants.sort((a, b) => b.rate - a.rate);
-  }
-
-  // 選擇最合適的顧問（排序後的第一位）
-  console.log(availableConsultants[0].name);
-
-  // 更新顧問的預約時間
-  consultantSchedules[availableConsultants[0].name].push({
-    start: hour,
-    end: hour + duration,
-  });
-}
-
 const consultants = [
-  { name: "John", rate: 4.5, price: 1000 },
-  { name: "Bob", rate: 3, price: 1200 },
-  { name: "Jenny", rate: 3.8, price: 800 },
+  { name: "John", rate: 4.5, price: 1000, time: [] },
+  { name: "Bob", rate: 3, price: 1200, time: [] },
+  { name: "Jenny", rate: 3.8, price: 800, time: [] },
 ];
 
-// 進行預約
-book(consultants, 15, 1, "price");
-book(consultants, 11, 2, "price");
-book(consultants, 10, 2, "price");
-book(consultants, 20, 2, "rate");
-book(consultants, 11, 1, "rate");
-book(consultants, 11, 2, "rate");
-book(consultants, 14, 3, "price");
+function findAvailableConsultants(consultants, hour, duration) {
+  const timeToBook = Array.from({ length: duration }, (_, i) => i + hour);
+  return consultants.filter((consultant) =>
+    timeToBook.every((t) => !consultant.time.includes(t))
+  );
+}
+
+function chooseBestConsultant(availableConsultants, criteria) {
+  if (availableConsultants.length === 0) {
+    return null;
+  }
+  if (criteria === "rate") {
+    return availableConsultants.reduce((max, consultant) =>
+      max.rate > consultant.rate ? max : consultant
+    );
+  } else if (criteria === "price") {
+    return availableConsultants.reduce((min, consultant) =>
+      min.price < consultant.price ? min : consultant
+    );
+  }
+}
+
+function bookConsultant(consultants, hour, duration, criteria) {
+  const availableConsultants = findAvailableConsultants(
+    consultants,
+    hour,
+    duration
+  );
+  const bestConsultant = chooseBestConsultant(availableConsultants, criteria);
+  if (bestConsultant) {
+    bestConsultant.time.push(
+      ...Array.from({ length: duration }, (_, i) => i + hour)
+    );
+    console.log(bestConsultant.name);
+  } else {
+    console.log("No Service");
+  }
+}
+
+// 預約範例
+bookConsultant(consultants, 15, 1, "price"); // Jenny
+bookConsultant(consultants, 11, 2, "price"); // Jenny
+bookConsultant(consultants, 10, 2, "price"); // John
+bookConsultant(consultants, 20, 2, "rate"); // John
+bookConsultant(consultants, 11, 1, "rate"); // Bob
+bookConsultant(consultants, 11, 2, "rate"); // No Service
+bookConsultant(consultants, 14, 3, "price"); // John
 
 // Q3
 console.log("----------Q3----------");

@@ -54,55 +54,44 @@ find_and_print(messages, "Qizhang") # print Leslie
 find_and_print(messages, "Ximen") # print Bob
 find_and_print(messages, "Xindian City Hall") # print Vivian
 print("----------Q2----------")
-# Q2
-# 增加一個結構來追蹤顧問的預約狀態
-consultant_schedules = {
-    "John": [],
-    "Bob": [],
-    "Jenny": [],
-}
-
-def book(consultants, hour, duration, criteria):
-    # 過濾出在指定時間可預約的顧問
-    available_consultants = [consultant for consultant in consultants if is_consultant_available(consultant, hour, duration)]
-
-    if not available_consultants:
-        print("No Service")
-        return
-
-    # 根據優先考慮進行排序
-    if criteria == "price":
-        available_consultants.sort(key=lambda c: c["price"])
-    elif criteria == "rate":
-        available_consultants.sort(key=lambda c: c["rate"], reverse=True)
-
-    # 選擇最合適的顧問(排序後的第一位)
-    consultant = available_consultants[0]
-    print(consultant["name"])
-
-    # 更新顧問的預約時間
-    consultant_schedules[consultant["name"]].append({"start": hour, "end": hour + duration})
-
-def is_consultant_available(consultant, hour, duration):
-    # 檢查顧問是否在該時間段內已經有預約
-    for booking in consultant_schedules[consultant["name"]]:
-        if hour < booking["end"] and hour + duration > booking["start"]:
-            return False
-    return True
+#Q2
 
 consultants = [
-    {"name": "John", "rate": 4.5, "price": 1000},
-    {"name": "Bob", "rate": 3.0, "price": 1200},
-    {"name": "Jenny", "rate": 3.8, "price": 800},
+    {"name": "John", "rate": 4.5, "price": 1000, "time": []},
+    {"name": "Bob", "rate": 3, "price": 1200, "time": []},
+    {"name": "Jenny", "rate": 3.8, "price": 800, "time": []}
 ]
 
-book(consultants, 15, 1, "price") # Jenny
-book(consultants, 11, 2, "price") # Jenny
-book(consultants, 10, 2, "price") # John
-book(consultants, 20, 2, "rate") # John
-book(consultants, 11, 1, "rate") # Bob
-book(consultants, 11, 2, "rate") # No Service
-book(consultants, 14, 3, "price") # John
+def find_available_consultants(consultants, hour, duration):
+    time_to_book = range(hour, hour + duration)
+    return [consultant for consultant in consultants if all(t not in consultant["time"] for t in time_to_book)]
+
+def choose_best_consultant(available_consultants, criteria):
+    if not available_consultants:
+        return None
+    if criteria == "rate":
+        return max(available_consultants, key=lambda x: x[criteria])
+    elif criteria == "price":
+        return min(available_consultants, key=lambda x: x[criteria])
+
+def book_consultant(consultants, hour, duration, criteria):
+    available_consultants = find_available_consultants(consultants, hour, duration)
+    best_consultant = choose_best_consultant(available_consultants, criteria)
+    if best_consultant:
+        best_consultant["time"].extend(range(hour, hour + duration))
+        print(best_consultant["name"])
+    else:
+        print("No Service")
+
+# 預約範例
+book_consultant(consultants, 15, 1, "price")  # Jenny
+book_consultant(consultants, 11, 2, "price")  # Jenny
+book_consultant(consultants, 10, 2, "price")  # John
+book_consultant(consultants, 20, 2, "rate")   # John
+book_consultant(consultants, 11, 1, "rate")   # Bob
+book_consultant(consultants, 11, 2, "rate")   # No Service
+book_consultant(consultants, 14, 3, "price")  # John
+
 
 print("----------Q3----------")
 # Q3
