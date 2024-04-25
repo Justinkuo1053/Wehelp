@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員登入系統</title>
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="header">歡迎光臨，請輸入帳號密碼</div>
+    <div class="login-container">
+      <div class="login-label">登入系統</div>
+      <form
+        id="loginForm"
+        class="login-form"
+        method="post"
+        action="{{ url_for('signin') }}"
+      >
+        <div class="account">
+          <label for="username">帳號</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div class="password">
+          <label for="password">密碼</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="inform-consent">
+          <label for="remember">同意條款</label>
+          <input type="checkbox" name="remember" id="remember" />
+        </div>
+        <button type="submit">登入</button>
+      </form>
+    </div>
+    <hr class="hr" />
+    <div class="calculator">
+      <div class="calculate-label">計算正整數的平方</div>
+
+      <div>
+        <label class="positive-label">正整數</label>
+        <input type="text" class="square-input" name="squareInput" />
+      </div>
+      <button class="calculate-btn">計算</button>
+    </div>
+
+    <script src="{{ url_for('static', path='/app.js') }}"></script>
+    <script>
+      document.getElementById("loginForm").onsubmit = function (event) {
+        var remember = this.remember.checked;
+        if (!remember) {
+          alert("請勾選同意條款");
+          event.preventDefault(); // 阻止表單提交
+        }
+      };
+    </script>
+  </body>
+</html>

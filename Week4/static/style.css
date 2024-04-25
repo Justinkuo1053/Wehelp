@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  height: 9rem;
+  background-color: #23303e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  width: 100%;
+}
+
+.login-container {
+  height: auto;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-label {
+  font-size: 2.5rem;
+}
+
+.account,
+.password,
+.inform-consent {
+  margin: 1rem 0;
+}
+
+.account label,
+.password label,
+.inform-consent label {
+  font-size: 1.7rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="checkbox"] {
+  padding: 0.5rem;
+}
+
+.login-form > button {
+  padding: 0.5rem;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: black;
+  height: 1px;
+  margin-top: 8rem;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.square-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculate-label {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.positive-label {
+  font-size: 1.7rem;
+  margin-left: 0.5rem;
+}
+
+.calculator button {
+  width: 5rem;
+  padding: 0.5rem;
+  margin-top: 2rem;
+}
