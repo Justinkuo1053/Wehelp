@@ -47,7 +47,7 @@ async def success(request: Request):
     print(request.session)
     return templates.TemplateResponse("member.html", {"request": request})
 
-@app.post("/signout")
+@app.get("/signout")
 async def signout(request: Request):
     request.session.pop('username', None)
     return RedirectResponse(url="/", status_code=status.HTTP_302_FOUND)

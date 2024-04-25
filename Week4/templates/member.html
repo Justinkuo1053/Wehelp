@@ -59,7 +59,7 @@
   <body>
     <div class="header">歡迎光臨，這是會員頁</div>
     <h1>恭喜您，成功登入系統</h1>
-    <form method="post" action="{{ url_for('signout') }}">
+    <form method="get" action="{{ url_for('signout') }}">
       <button type="submit" class="logout-button">登出系統</button>
     </form>
   </body>
