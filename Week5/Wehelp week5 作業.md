@@ -1,5 +1,6 @@
 
 Task 2
+
 ● Create a new database named website.
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/433afb7a-12ed-4fc5-9ebb-040b9b4f59d8)
 
@@ -7,6 +8,7 @@ Task 2
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/d1fa6b90-7967-43fc-8948-907ee93886e7)
 
 Task 3
+
 ● INSERT a new row to the member table where name, username and password must
 be set to test. INSERT additional 4 rows with arbitrary data.
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/a4114b56-426f-48b3-b5fc-a64cb47cca00)
@@ -35,6 +37,7 @@ of time. Note: it does not mean SELECT rows where id are 2, 3, or 4.
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/ee30a248-73a9-48da-9efe-4db737c94e09)
 
 Task 4 
+
 ● SELECT how many rows from the member table.
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/64a1dd99-d383-4530-b326-5799b5bb1dde)
 
@@ -49,6 +52,7 @@ follower_count, from the member table.
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/ac0a9156-24a0-429d-8f9d-0925d2e1c0ef)
 
 Task 5: SQL JOIN
+
 ● Create a new table named message, in the website database. designed as below:
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/a20df365-4082-457c-af8b-a242ebf86054)
 自行創建數據
