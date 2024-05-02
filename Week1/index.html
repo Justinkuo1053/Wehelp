@@ -3,116 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Web Design Assignment</title>
-    <link rel="stylesheet" href="style.css" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Wehelp-w1</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="navbar-title">My Website</div>
-        <div class="navbar-menu">
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
+    <div class="container">
+      <navbar>
+        <div class="navbar-list desktop-menu">
+          <p class="navbar-item">My Webpage</p>
+          <p class="navbar-item">Item 1</p>
+          <p class="navbar-item">Item 2</p>
+          <p class="navbar-item">Item 3</p>
+          <p class="navbar-item">Item 4</p>
         </div>
-        <div id="popupmenu" class="popup-menu">
-          <div class="burger-menu" onclick="mobilemenu()"></div>
+        <div class="mobile-menu">
+          <p class="navbar-item">My Webpage</p>
+          <button class="show-modal">&equiv;</button>
+          <div class="modal hidden">
+            <button class="close-modal">&times;</button>
+            <div class="list-items-menu">
+              <p>Item 1</p>
+              <p>Item 2</p>
+              <p>Item 3</p>
+              <p>Item 4</p>
+            </div>
+          </div>
+          <div class="overlay hidden"></div>
         </div>
-      </nav>
+      </navbar>
 
-      <div class="clear"></div>
-      <!-- 新增清除浮動 -->
-    </header>
-    <section class="welcome-section">
-      <p>Welcome to MyHome</p>
-    </section>
-    <main>
-      <div class="BS">
-        <div class="small-boxes-container">
-          <div class="Promotion1">
-            <img src="public\2833951.jpg" alt="Promotion 1" />
-            <span>Promotion 1</span>
-            <!-- 其他內容 -->
-          </div>
-          <div class="Promotion2">
-            <img src="public\2833951.jpg" alt="Promotion 2" />
-            <span>Promotion 2</span>
-            <!-- 其他內容 -->
-          </div>
-          <div class="Promotion3">
-            <img src="public\2833951.jpg" alt="Promotion 3" />
-            <span>Promotion 3</span>
-            <!-- 其他內容 -->
-          </div>
-        </div>
-        <div class="big-boxes-container">
-          <div class="big-box big-box1">
-            <span>Title 1</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box2">
-            <span>Title 2</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box3">
-            <span>Title 3</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box4">
-            <span>Title 4</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box5">
-            <span>Title 5</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box6">
-            <span>Title 6</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box7">
-            <span>Title 7</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box8">
-            <span>Title 8</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box9">
-            <span>Title 9</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-          <div class="big-box big-box10">
-            <span>Title 10</span>
-            <div class="star"></div>
-            <!-- 添加星星圖標的容器 -->
-          </div>
-        </div>
-
-        <!-- 重复上面的 .big-box div 以创建 Title 3 至 Title 10 -->
+      <div class="welcome-bar">
+        <p class="welcome-text">Welcome to MyHome</p>
       </div>
-    </main>
-    <script>
-      let mobilemenu = function () {
-        let popupmenu = document.getElementById("popupmenu");
-        popupmenu.classList.toggle("active");
-      };
-
-      let closemenu = function () {
-        let popupmenu = document.getElementById("popupmenu");
-        popupmenu.classList.remove("active");
-      };
-    </script>
+      <div class="photo-container-flex">
+        <div class="photo-container">
+          <div class="promotion-1">
+            <img
+              src=".\public\2833951.jpg"
+              alt="leica at jp"
+              height="50"
+              width="80"
+              class="author-img"
+            />
+            <p class="promotion-p">Promotion 1</p>
+          </div>
+          <div class="promotion-2">
+            <img
+              src=".\public\2833951.jpg"
+              alt="leica at jp"
+              height="50"
+              width="80"
+              class="author-img"
+            />
+            <p class="promotion-p">Promotion 2</p>
+          </div>
+          <div class="promotion-3">
+            <img
+              src=".\public\2833951.jpg"
+              alt="leica at jp"
+              height="50"
+              width="80"
+              class="author-img"
+            />
+            <p class="promotion-p">Promotion 3</p>
+          </div>
+          <div class="title-1 background-image-container">
+            <div class="title-bg">
+              <p>Title 1</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-2 background-image-container">
+            <div class="title-bg">
+              <p>Title 2</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-3 background-image-container">
+            <div class="title-bg">
+              <p>Title 3</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-4 background-image-container">
+            <div class="title-bg">
+              <p>Title 4</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-5 background-image-container">
+            <div class="title-bg">
+              <p>Title 5</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-6 background-image-container">
+            <div class="title-bg">
+              <p>Title 6</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-7 background-image-container">
+            <div class="title-bg">
+              <p>Title 7</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-8 background-image-container">
+            <div class="title-bg">
+              <p>Title 8</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-9 background-image-container">
+            <div class="title-bg">
+              <p>Title 9</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+          <div class="title-10 background-image-container">
+            <div class="title-bg">
+              <p>Title 10</p>
+              <img class="star" src=".\public\R.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
