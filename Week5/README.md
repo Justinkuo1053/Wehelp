@@ -76,9 +76,10 @@ test. We have to JOIN the member table to filter and get that.
 ● Use SELECT, SQL Aggregation Functions with JOIN statement, get the average like
 count of messages where sender username equals to test.
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/0d388e8e-f6f4-41ee-b65b-28be705a8d80)
-語法:SELECT member.name, message.content FROM member INNER JOIN message ON member.id=message.member_id
+
+調整後的語法:SELECT member.name, message.content FROM member INNER JOIN message ON member.id=message.member_id
 WHERE member.username='test';
-調整後寫法
+
 ![image](https://github.com/Justinkuo1053/wehelp/assets/57930354/9723c0f9-715f-42ff-a31f-32bfba0a49bc)
 
 
