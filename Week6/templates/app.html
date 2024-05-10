@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Verification System</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/static/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="container">
+        <div class="title"><p>歡迎光臨，請註冊登入系統</p></div>
+        <div>註冊帳號</div>
+        <form
+          id="signup"
+          action="/signup"
+          method="post"
+          onsubmit="return checkInputEmpty(event)"
+        >
+          <div>
+            <label>姓名 </label>
+            <input type="text" name="name" />
+          </div>
+          <div>
+            <label>帳號 </label>
+            <input type="text" name="username" />
+          </div>
+          <div>
+            <label>密碼 </label>
+            <input type="password" name="password" />
+          </div>
+          <div>
+            <button type="submit">註冊</button>
+          </div>
+        </form>
+        <hr />
+        <div>登入系統</div>
+        <form
+          id="signin"
+          action="/signin"
+          method="post"
+          onsubmit="return checkInputEmpty(event)"
+        >
+          <div>
+            <label>帳號 </label>
+            <input type="text" name="username" />
+          </div>
+          <div>
+            <label>密碼 </label>
+            <input type="password" name="password" />
+          </div>
+          <div>
+            <button type="submit">登入</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function checkInputEmpty(event) {
+        const form = event.target;
+        let message = "";
+        switch (form.id) {
+          case "signup":
+            message = "請填入姓名、帳號與密碼";
+            break;
+          case "signin":
+            message = "請填入帳號與密碼";
+            break;
+        }
+        const inputs = form.querySelectorAll("input");
+        for (let input of inputs) {
+          if (input.value === "") {
+            alert(message);
+            return false;
+          }
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

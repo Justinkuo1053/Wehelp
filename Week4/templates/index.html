@@ -4,19 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>會員登入系統</title>
-    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet" />
+    <link href="/static/style.css" rel="stylesheet" />
   </head>
 
   <body>
     <div class="header">歡迎光臨，請輸入帳號密碼</div>
     <div class="login-container">
       <div class="login-label">登入系統</div>
-      <form
-        id="loginForm"
-        class="login-form"
-        method="post"
-        action="{{ url_for('signin') }}"
-      >
+      <form id="loginForm" class="login-form" method="post" action="/signin">
         <div class="account">
           <label for="username">帳號</label>
           <input type="text" name="username" id="username" />

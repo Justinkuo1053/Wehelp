@@ -1,0 +1,28 @@
+2024-05-09 23:25:59 [31584] [INFO] Will watch for changes in these directories: ['D:\\Wehelp 培訓營\\Wehelp Task (github)\\wehelp\\Week4']
+2024-05-09 23:25:59 [31584] [INFO] Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2024-05-09 23:25:59 [31584] [INFO] Started reloader process [31584] using WatchFiles
+2024-05-09 23:26:02 [10068] [INFO] Started server process [10068]
+2024-05-09 23:26:02 [10068] [INFO] Waiting for application startup.
+2024-05-09 23:26:02 [10068] [INFO] Application startup complete.
+2024-05-09 23:26:57 [31584] [INFO] 2 changes detected
+2024-05-09 23:26:57 [31584] [WARNING] WatchFiles detected changes in 'main.py'. Reloading...
+2024-05-09 23:26:57 [10068] [INFO] Shutting down
+2024-05-09 23:26:59 [10068] [INFO] Waiting for application shutdown.
+2024-05-09 23:26:59 [10068] [INFO] Application shutdown complete.
+2024-05-09 23:26:59 [10068] [INFO] Finished server process [10068]
+2024-05-09 23:27:00 [31584] [INFO] 2 changes detected
+2024-05-09 23:27:00 [31584] [WARNING] WatchFiles detected changes in 'main.py'. Reloading...
+2024-05-09 23:27:01 [31584] [INFO] 6 changes detected
+2024-05-09 23:27:02 [31584] [INFO] 1 change detected
+2024-05-09 23:27:02 [31584] [INFO] 1 change detected
+2024-05-09 23:27:03 [31584] [INFO] 1 change detected
+2024-05-09 23:27:03 [31584] [INFO] 1 change detected
+2024-05-09 23:27:04 [31584] [INFO] 1 change detected
+2024-05-09 23:27:05 [33160] [INFO] Started server process [33160]
+2024-05-09 23:27:05 [33160] [INFO] Waiting for application startup.
+2024-05-09 23:27:05 [33160] [INFO] Application startup complete.
+2024-05-09 23:27:15 [33160] [INFO] Shutting down
+2024-05-09 23:27:15 [33160] [INFO] Waiting for application shutdown.
+2024-05-09 23:27:15 [33160] [INFO] Application shutdown complete.
+2024-05-09 23:27:15 [33160] [INFO] Finished server process [33160]
+2024-05-09 23:27:15 [31584] [INFO] Stopping reloader process [31584]
