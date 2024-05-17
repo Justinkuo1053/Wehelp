@@ -11,15 +11,16 @@ body {
   flex: none;
   width: 800px;
   text-align: center;
-  border-color: rgba(0, 0, 0, 0.273);
+  border-color: rgba(27, 69, 124, 0.273);
   border-style: groove;
 }
+
 .container div {
   padding: 10px;
 }
 .title {
-  background-color: rgb(34, 51, 67);
-  color: white;
+  background-color: rgb(18, 73, 18);
+  color: rgb(255, 255, 255);
   font-size: 30px;
 }
 .title p {

@@ -1,0 +1,30 @@
+body {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    flex: none;
+    width: 800px;
+    text-align: center;
+    border-color: rgba(0, 0, 0, 0.273);
+    border-style: groove;
+}
+.container div {
+    padding: 10px;
+}
+.title {
+    background-color: rgb(34,51,67);
+    color: white;
+    font-size: 30px;
+}
+.title p {
+    margin: 0;
+    padding: 10px;
+}
+.calculator {
+    border-top: 0;
+}
